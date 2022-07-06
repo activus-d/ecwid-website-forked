@@ -29,7 +29,7 @@ window.addEventListener('scroll', ()=>{
 })
 
 
-Array.from(leftArrow).forEach((items)=>{
+/* Array.from(leftArrow).forEach((items)=>{
     console.log(items)
     items.addEventListener('click', (e)=>{
        content.forEach((ele)=>{
@@ -42,4 +42,15 @@ Array.from(leftArrow).forEach((items)=>{
     })
         
         
-})
+})  */
+Array.from(leftArrow).forEach( item => {
+    item.addEventListener('click', openContent)
+} )
+
+function openContent(e) {
+    let contentParent = this.parentNode.children
+    let content = contentParent[contentParent.length - 1]
+    console.log(content)
+    content.classList.toggle('content')
+}
+
